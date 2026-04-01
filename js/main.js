@@ -233,17 +233,147 @@
 
 
 
+// console.log("Optional Chaning");
+
+// const user1 = {
+//     name: "Андрей",
+//     address : {
+//         city: "Волжский",
+//         street : "Пушкина",
+//     },
+// };
+
+// const user2 = {
+//     name: "Дмитрий",
+// };
+
+// const city1 = user2.address?.city;
+// console.log("Город ", city2);
+
+// const street = user1.address?.street;
+// console.log("Улица", street);
 
 
 
 
+// const admin = {
+//     name : "Администратор",
+//     permissions : {
+//         canDelete: () => true,
+//     },
+// };
+
+// const guest = {
+//     name : "Гость",
+// };
+
+// console.log("Админ может удалять?", admin.permissions?.canDelete?.());
 
 
 
+// const company = {
+//     name : "Tech corp",
+//     employees : [
+//         {name : "Надежда", role : "Developer"},
+//         {name : "Анна", role : "Designer"},
+//     ],
+// };
+
+// const startup = {
+//     name : "New Startup",
+// };
+
+// console.log("Первый сотрудников", company.employees?.[0]?.name);
+// console.log("Первый сотрудник стартапа", startup.employees?.[[0]?.name]);
 
 
 
+// console.log("Nullish Coalescing");
+// const value1 = 0;
+// const value2 = "";
+// const value3 = false;
+// const value4 = null;
+// const value5 = undefined;
 
+// console.log(`value1 || "defauit" `,value1 || "default" );
+
+// console.log(`value1 ?? "default"`,value1 ?? "default");
+// console.log(`value1 ?? "default"`,value2 ?? "default");
+
+
+// function displayUserSettings(settings){
+//     const theme = settings?.theme ?? "light";
+//     const fontSize = settings?.fontSize ?? 14;
+//     const notifications = settings?.notifications ?? true;
+
+//     console.log("настройки пользователя");
+//     console.log("Тема" , theme);
+//     console.log("Размер шрифта", fontSize);
+//     console.log("Уведомленияя" , notifications);
+// }
+
+// displayUserSettings({theme: "dark", fontSize: 16});
+// displayUserSettings({});
+
+
+// const apiResponse = {
+//     data : {
+//         user : {
+//             profile : {
+//                 settings : {
+//                     language : "ru",
+//                 },
+//             },
+//         },
+//     },
+// };
+
+// const language = apiResponse.data.user.profile.settings.language ?? "en";
+// console.log("zpsr", language);
+
+
+//практика
+
+const order = {
+  customer: {
+    name: "Иван Петров",
+    email: "ivan@example.com",
+    phone: "+7 (999) 123-45-67"
+  },
+  
+  shipping: {
+    address: "г. Москва, ул. Тверская, д. 10, кв. 5",
+    method: "Курьерская доставка",
+    cost: 350
+  }
+};
+function displayOrder(orderData) {
+  
+  console.log("========== ИНФОРМАЦИЯ О ЗАКАЗЕ ==========");
+  const cusName = orderData?.customer?.name ?? "Не указано";
+  const cusEmail = orderData?.customer?.email ?? "Не указан";
+  const cusPhone = orderData?.customer?.phone ?? "Не указан";
+  
+  console.log("\nКЛИЕНТ:");
+  console.log("   Имя: " + cusName);
+  console.log("   Email: " + cusEmail);
+  console.log("   Телефон: " + cusPhone);
+
+  const shiAddress = orderData?.shipping?.address ?? "Адрес не указан";
+  const shiMethod = orderData?.shipping?.method ?? "Способ не выбран";
+  const shiCost = orderData?.shipping?.cost ?? 0;
+  
+  console.log("\nДОСТАВКА:");
+  console.log("   Адрес: " + shiAddress);
+  console.log("   Способ: " + shiMethod);
+  console.log("   Стоимость: " + shiCost + " ₽");
+  
+  const totalAmount =  shiCost;
+  console.log(" ИТОГО:");
+  console.log("   Общая стоимость: " + totalAmount + " ₽");
+}
+
+displayOrder(order);
 
 
 
