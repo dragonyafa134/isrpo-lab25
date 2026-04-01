@@ -1,3 +1,241 @@
+//lab25
+// console.log("Async|Await");
+
+// async function greet() {
+//     return "Привет";
+// }
+
+// greet().then((message) => console.log(message));
+
+
+// function getWeather(){
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve({temp : 22, condition : "Солнечно"});
+//         }, 1000);
+//     });
+// }
+
+// async function showWeather() {
+//     console.log("Загрузка погоды..");
+//     const weather = await getWeather();
+//     console.log(`Температура ${weather.temp} , ${weather.condition}`);
+// }
+
+// showWeather();
+
+
+
+// async function fetchData(shouleFail) {
+//     return new Promise((reslove, reject) => {
+//         setTimeout(() => {
+//             if (shouleFail){
+//                 reject("Ошибка при загрузке данных");
+//             }else{
+//                 reslove({data : "Важные данные"});
+//             }
+//         }, 800);
+//     });
+// }
+
+
+// async function getData() {
+//     try{
+//         const resuit = await fetchData(false);
+//         console.log("Успешно", resuit.data);
+
+//         const failedResuit = await fetchData(true);
+//         console.log("это не выполняетмя");
+//     }catch (error){
+//         console.log("Поймана ошибка", error);
+//     }
+// }
+// getData();
+
+
+
+
+// async function cookDinner() {
+//     console.log("Начинаем готовить...");
+
+//     const pasta = await delay(1000).then(() => "Паста готова");
+//     console.log(pasta);
+
+//     const sauce = await delay(500).then(() => "Соус готов");
+//     console.log(sauce);
+
+//     const salad = await delay(700).then(() => "Салат готов");
+//     console.log(salad);
+    
+//     return "Ужин готов";
+// }
+
+
+// function delay(ms){
+//     return new Promise((reslove) => {
+//         setTimeout(() => {
+//             reslove(`Прошло ${ms} миллисекунд`);
+//         }, ms );
+//     });
+// }
+
+// cookDinner().then((resuit) => console.log(resuit));
+
+// async function cookDinnerFast() {
+//     console.log("Готвим все одноаремнно...");
+
+//     const [pasta, sauce, salad] = await Promise.all([
+//         delay(1000).then (() => "Паста готова"),
+//         delay(500).then(() => "Соус готов"),
+//         delay(700).then(() => "Салаь готов"),
+//     ]);
+
+//     console.log(pasta,sauce,salad);
+//     return "Ужин готов быстрее";
+// }
+
+// cookDinnerFast().then((resuit) => console.log(resuit));
+
+
+
+// function checkInventory(product) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const i = {
+//                 'ноутбук': true,
+//                 'телефон': true,
+//                 'планшет': false,
+//             };
+//             if (i[product] === true) {
+//                 resolve(`Товар "${product}" есть в наличии!`);
+//             } else if (i[product] === false) {
+//                 reject(`Товара "${product}" нет в наличии!`);
+//             } else {
+//                 reject(`Товар "${product}" не найден в системе!`);
+//             }
+//         }, 1000);
+//     });
+// }
+
+// function calculateCost(product, quantity) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             const prices = {
+//                 'ноутбук': 50000,
+//                 'телефон': 30000,
+//                 'планшет': 20000,
+//             };
+//         }, 800);
+//     });
+// }
+
+// async function processOrder(product, quantity) {
+//     try {
+//         console.log(`\n=== Обработка заказа: ${product} x ${quantity} шт. ===`);
+        
+//         console.log('Подготовка к обработке заказа...');
+//         const delayMess = await delay(500);
+//         console.log(`${delayMess}`);
+        
+//         console.log('1. Проверяем наличие товара...');
+//         const inventoryResult = await checkInventory(product);
+//         console.log(` ${inventoryResult}`);
+        
+//         await delay(300);
+//         console.log('   Продолжаем оформление...');
+        
+//         console.log('2. Рассчитываем стоимость...');
+//         const costResult = await calculateCost(product, quantity);
+//         console.log(`${costResult.message} (${costResult.price} руб. × ${quantity} шт.)`);
+        
+//         await delay(400);
+        
+//         console.log(` Заказ успешно оформлен! ID: ${orderResult.orderId}`);
+//         return orderResult;
+        
+//     } catch (error) {
+//         console.error(`Ошибка: ${error}`);
+//         throw error;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//lab24
+
+
 // console.log("\n===Деструктуризация массивов===");
 // const colors = ["red", "green", "blue"];
 
